@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 
 
-public class NotiController extends HttpServlet {
+public class Sample_details extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final String URL = "jdbc:mysql://localhost:3306/register";
     private static final String USERNAME = "root";
@@ -37,15 +37,15 @@ public class NotiController extends HttpServlet {
 
                      // Generate the HTML response
                      out.println("<html>");
-                     out.println("<head><title>New Request</title>");
+                     out.println("<head><title> Request Details</title>");
                      out.println("<style>");
                      out.println("a { text-decoration: none; color: black; }");
                      out.println("</style>");
                      out.println("</head>");
                      out.println("<body>");
-                     out.println("<h1>New Request</h1>");
+                     out.println("<h1>All details of Sample</h1>");
                      out.println("<table border='1'>");
-                     out.println("<tr><th>Username</th><th>Fabric Type</th><th>Sample Quantity</th><th>Contact</th><th>Date</th><th>Decision</th></tr>");
+                     out.println("<tr><th>Username</th><th>Fabric Type</th><th>Sample Quantity</th><th>Contact</th><th>Date</th><th>Color_Hexcode</th><th>Design_image </th></tr>");
 
             // Process the ResultSet and populate the infoList
             while (resultSet.next()) {
@@ -55,10 +55,10 @@ public class NotiController extends HttpServlet {
                   out.println("<td>" +resultSet.getInt("sample_quantity")+ "</td>");
                   out.println("<td>" +  resultSet.getLong("contact") + "</td>");
                   out.println("<td>" + resultSet.getDate("date") + "</td>");
-                  out.println("<td>");
-                  out.println("<button><a href='Sample_details'>Accept</a></button> |  <button><a href='#'>Reject</a></button>");
-                  
-                  out.println("</td>");
+                  out.println("<td>" + resultSet.getInt("color") + "</td>");
+
+                  out.println("<td><img src='/Final/Project/images/" + resultSet.getString("imgName") + "' width='100' height='100'></td>");
+
                   out.println("</tr>");
             }
                 out.println("</table>");
@@ -77,6 +77,6 @@ public class NotiController extends HttpServlet {
 
         // Forward the infoList to the JSP view for display
         
-        request.getRequestDispatcher("client.jsp").forward(request, response);
+        request.getRequestDispatcher("clientrequest.jsp").forward(request, response);
     }
 }

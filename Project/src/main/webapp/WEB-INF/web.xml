@@ -41,6 +41,28 @@
     <servlet-name>RequestController</servlet-name>
     <url-pattern>/RequestController</url-pattern>
 </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Admin_history</servlet-name>
+    <servlet-class>Admin_history</servlet-class>
+
+    </servlet>
+
+<servlet-mapping>
+    <servlet-name>Admin_history</servlet-name>
+    <url-pattern>/Admin_history</url-pattern>
+</servlet-mapping>
+
+ <servlet>
+    <servlet-name>Sample_details</servlet-name>
+    <servlet-class>Sample_details</servlet-class>
+
+    </servlet>
+
+<servlet-mapping>
+    <servlet-name>Sample_details</servlet-name>
+    <url-pattern>/Sample_details</url-pattern>
+</servlet-mapping>
     </web-app>
     
     

@@ -58,7 +58,7 @@
           <center> <img src="https://cdn.onlinewebfonts.com/svg/img_229758.png" alt="image" width="120"/></center>
           </div>
           <div class="card-body">
-            <a href="UserServlet" class="btn btn-primary btn-lg btn-block ">View history</a>
+            <a href="Admin_history" class="btn btn-primary btn-lg btn-block ">View history</a>
           </div>
         </div>
       </div>

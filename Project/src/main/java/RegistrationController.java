@@ -37,7 +37,7 @@ public class RegistrationController extends HttpServlet {
 
 		
 		if (flag) {
-			request.getRequestDispatcher("Registration.jsp").forward(request, response);
+			request.getRequestDispatcher("Login.jsp").forward(request, response);
 		} else {
 			System.out.println("error.jsp");
 		}
