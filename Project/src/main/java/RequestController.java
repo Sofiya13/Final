@@ -49,8 +49,9 @@ public class RequestController extends HttpServlet {
         String imageFileName=file.getSubmittedFileName();
         System.out.println("Selected Image File Name : "+imageFileName);
       
-        String uploadpath = request.getServletContext().getRealPath("/images/") + imageFileName;
+       String uploadpath = "C:/Users/Shaki/git/Final/Project/src/main/webapp/images/" + imageFileName;
 
+       
         System.out.println("Upload path: "+uploadpath);
         
         

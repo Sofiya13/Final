@@ -22,8 +22,8 @@ public class NotiController extends HttpServlet {
        
 
         try 
-        		 {
-        			 try {
+        	 {
+        		try {
 						Class.forName("com.mysql.cj.jdbc.Driver");
 					} catch (ClassNotFoundException e) {
 						// TODO Auto-generated catch block
@@ -31,7 +31,7 @@ public class NotiController extends HttpServlet {
 					}
         			 Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
                      Statement statement = connection.createStatement();
-                     ResultSet resultSet = statement.executeQuery("SELECT * FROM info");
+                     ResultSet resultSet = statement.executeQuery("SELECT * FROM info where status='no'");
 
                      PrintWriter out = response.getWriter();
 
@@ -56,7 +56,7 @@ public class NotiController extends HttpServlet {
                   out.println("<td>" +  resultSet.getLong("contact") + "</td>");
                   out.println("<td>" + resultSet.getDate("date") + "</td>");
                   out.println("<td>");
-                  out.println("<button><a href='Sample_details'>Accept</a></button> |  <button><a href='#'>Reject</a></button>");
+                  out.println("<button><a href='Sample_details?status=yes&id=" + resultSet.getInt("id") + "'>Accept</a></button> | <button><a href='Sample_reject?id="+ resultSet.getInt("id") + "'>Reject</a></button>");
                   
                   out.println("</td>");
                   out.println("</tr>");
@@ -65,7 +65,7 @@ public class NotiController extends HttpServlet {
                 out.println("</body>");
                 out.println("</html>");
 
-                out.close();
+              
             
             
         } catch (SQLException e) {
@@ -77,6 +77,6 @@ public class NotiController extends HttpServlet {
 
         // Forward the infoList to the JSP view for display
         
-        request.getRequestDispatcher("client.jsp").forward(request, response);
+      //  request.getRequestDispatcher("client.jsp").forward(request, response);
     }
 }

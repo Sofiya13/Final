@@ -63,6 +63,17 @@
     <servlet-name>Sample_details</servlet-name>
     <url-pattern>/Sample_details</url-pattern>
 </servlet-mapping>
+
+ <servlet>
+    <servlet-name>Sample_reject</servlet-name>
+    <servlet-class>Sample_reject</servlet-class>
+
+    </servlet>
+
+<servlet-mapping>
+    <servlet-name>Sample_reject</servlet-name>
+    <url-pattern>/Sample_reject</url-pattern>
+</servlet-mapping>
     </web-app>
     
     
