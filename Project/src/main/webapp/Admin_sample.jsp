@@ -18,7 +18,6 @@ body {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	margin-top: 50px;
 	transition: background-color 0.3s;
-	width: 50%;
 }
 
 .container:hover {
@@ -29,7 +28,6 @@ body {
 	text-align: center;
 	margin-bottom: 30px;
 	color: #007bff;
-	
 }
 
 .form-group label {
@@ -39,13 +37,12 @@ body {
 
 .form-group input[type="text"], .form-group input[type="number"],
 	.form-group input[type="date"] {
-	width: 50%;
+	width: 100%;
 	padding: 10px;
 	font-size: 16px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	transition: border-color 0.3s, box-shadow 0.3s;
-	
 }
 
 .form-group input[type="text"]:focus, .form-group input[type="number"]:focus,
@@ -73,22 +70,10 @@ body {
 </head>
 <body>
 	<div class="container">
-		<h1>User Request Form</h1>
-		<form action="RequestController?username=<%= request.getParameter("username") %>" method="post"
+		<h1>Admin Sample Page</h1>
+		<form action="Admin_sampleController?username=<%= request.getParameter("username") %>" method="post"
 			enctype="multipart/form-data">
-			<div class="form-group">
-				<label for="username">Username:</label> <input type="text"
-					id="username" name="username"  value="<%= request.getParameter("username") %>" disabled="disabled">
-			</div>
-			<div class="form-group">
-				<label for="fabric_type">Fabric Type:</label> <input type="text"
-					id="fabric_type" name="fabric_type"
-					placeholder="e.g., Cotton,silk..." required>
-			</div>
-			<div class="form-group">
-				<label for="sample_quantity">Sample Quantity:</label> <input
-					type="number" id="sample_quantity" name="sample_quantity" required>
-			</div>
+		
 			<div class="form-group">
 				<label for="design_image">Select Design:</label> <input type="file"
 					id="design_image" name="design_image"
@@ -103,17 +88,12 @@ body {
 					id="price" name="price" required>
 			</div>
 			<div class="form-group">
-				<label for="contact">Contact:</label> <input type="text"
-					id="contact" name="contact" required>
-			</div>
-
-			<div class="form-group">
 				<label for="date">Date:</label> <input type="date" id="date"
 					name="date" required>
 			</div>
 		
         <button type="submit" name="submit">Submit</button>
-                         <button><a href="Client_challan?id=<%= request.getParameter("id")%>"></a>Make Challan</button>
+                         
         
 
 		</form>

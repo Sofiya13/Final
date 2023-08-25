@@ -1,34 +1,36 @@
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.MultipartConfig;
-import jakarta.servlet.http.*;
-import java.awt.Color;
 
+
+import java.awt.Color;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.sql.Date;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.http.Part;
+
+/**
+ * Servlet implementation class Admin_sampleController
+ */
 @MultipartConfig
-public class RequestController extends HttpServlet {
-    /**
-	 * 
-	 */
+@WebServlet("/Admin_sampleController")
+public class Admin_sampleController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private RequestDAO requestDAO;
+	private Admin_sampleDAO admin_sampleDAO;
 
     public void init() {
-    	requestDAO = new RequestDAO();
+    	admin_sampleDAO = new Admin_sampleDAO();
     }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	
+	 protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String fabricType = request.getParameter("fabric_type");
-        int sampleQuantity = Integer.parseInt(request.getParameter("sample_quantity"));
-       
-        String contact = request.getParameter("contact");
         Date date = null;
         Part file=request.getPart("design_image");
         int price1 = Integer.parseInt(request.getParameter("price"));
@@ -55,9 +57,7 @@ public class RequestController extends HttpServlet {
        
         System.out.println("Upload path: "+uploadpath);
         
-        
        
-		
         try
         {
         FileOutputStream fos=new FileOutputStream(uploadpath);
@@ -79,21 +79,18 @@ public class RequestController extends HttpServlet {
             e.printStackTrace();
         }
         
-        Client_request user = new Client_request();
-        user.setUsername(username);
-        user.setFabricType(fabricType);
-        user.setSampleQuantity(sampleQuantity);
-        user.setContact(contact);
+        Admin_sample user = new Admin_sample();
+       user.setUsername(request.getParameter("username"));
         user.setDate(date);
         user.setImageFileName(imageFileName);
         user.setHexValue(hexValue);
         user.setPrice(price1);
 
-        requestDAO.insertUser(user);
+        admin_sampleDAO.insertUser(user);
 
         // You can add additional logic here, e.g., redirecting to a success page.
         // For simplicity, we're not adding any further processing in this example.
 
-        response.sendRedirect("Client_view?username="+ request.getParameter("username") ); // Replace with your success page URL
+        response.sendRedirect("Sample_details?username="+ request.getParameter("username") ); // Replace with your success page URL
     }
 }

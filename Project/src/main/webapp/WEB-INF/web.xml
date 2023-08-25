@@ -74,6 +74,61 @@
     <servlet-name>Sample_reject</servlet-name>
     <url-pattern>/Sample_reject</url-pattern>
 </servlet-mapping>
+<servlet>
+   <servlet-name>Client_view</servlet-name>
+    <servlet-class>Client_view</servlet-class>
+
+    </servlet>
+
+<servlet-mapping>
+    <servlet-name>Client_view</servlet-name>
+    <url-pattern>/Client_view</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>ChallanServlet</servlet-name>
+    <servlet-class>ChallanServlet</servlet-class>
+
+    </servlet>
+
+<servlet-mapping>
+    <servlet-name>ChallanServlet</servlet-name>
+    <url-pattern>/ChallanServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>Admin_sampleController</servlet-name>
+    <servlet-class>Admin_sampleController</servlet-class>
+
+    </servlet>
+
+<servlet-mapping>
+    <servlet-name>Admin_sampleController</servlet-name>
+    <url-pattern>/Admin_sampleController</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>Admin_challan</servlet-name>
+    <url-pattern>/Admin_challan</url-pattern>
+</servlet-mapping>
+   
+    <servlet>
+    <servlet-name>Admin_challan</servlet-name>
+    <servlet-class>Admin_challan</servlet-class>
+
+    </servlet>
+    
+    <servlet-mapping>
+    <servlet-name>Client_history</servlet-name>
+    <url-pattern>/Client_history</url-pattern>
+</servlet-mapping>
+   
+    <servlet>
+    <servlet-name>Client_history</servlet-name>
+    <servlet-class>Client_history</servlet-class>
+
+    </servlet>
+
     </web-app>
     
     

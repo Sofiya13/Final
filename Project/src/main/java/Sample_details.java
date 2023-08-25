@@ -56,7 +56,7 @@ public class Sample_details extends HttpServlet {
             out.println("<body>");
             out.println("<h1>All details of Sample</h1>");
             out.println("<table border='1'>");
-            out.println("<tr><th>Username</th><th>Fabric Type</th><th>Sample Quantity</th><th>Contact</th><th>Date</th><th>Color_Hexcode</th><th>Design_image</th></tr>");
+            out.println("<tr><th>Username</th><th>Fabric Type</th><th>Sample Quantity</th><th>Price</th><th>Contact</th><th>Color_Hexcode</th><th>Design_image</th><th>Date</th></tr>");
 
             // Process the ResultSet and populate the infoList
             while (resultSet.next()) {
@@ -64,10 +64,20 @@ public class Sample_details extends HttpServlet {
                 out.println("<td>" + resultSet.getString("username") + "</td>");
                 out.println("<td>" + resultSet.getString("fabric_type") + "</td>");
                 out.println("<td>" + resultSet.getInt("sample_quantity") + "</td>");
+                out.println("<td>" + resultSet.getInt("price") + "</td>");
                 out.println("<td>" + resultSet.getLong("contact") + "</td>");
-                out.println("<td>" + resultSet.getDate("date") + "</td>");
+               
                 out.println("<td>" + resultSet.getInt("color") + "</td>");
                 out.println("<td><img src='" + request.getContextPath() + "/images/" + resultSet.getString("imgName") + "' width='100' height='100'></td>");
+                out.println("<td>" + resultSet.getDate("date") + "</td>");
+                out.println("<td>");
+                out.println("    <button><a href=\"Admin_sample.jsp?username="+ resultSet.getString("username") + "\">Upload Sample</a></button>");
+                out.println("</td>");
+                out.println("<td>");
+                out.println("    <button><a href=\"Admin_challan?username="+ resultSet.getString("username") + "\">View Challan</a></button>");
+
+                out.println("</td>");
+
 
                 out.println("</tr>");
             }

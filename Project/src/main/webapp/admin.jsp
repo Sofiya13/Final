@@ -63,7 +63,16 @@
         </div>
       </div>
 
-     
+     <div class="col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+          <center> <img src="https://thumbs.dreamstime.com/b/peri%C3%B3dico-l%C3%ADnea-icono-de-las-noticias-ejemplo-plano-simple-moderno-del-vector-para-el-app-m%C3%B3vil-sitio-web-o-mesa-129681986.jpg" alt="image" width="120"/></center>
+          </div>
+          <div class="card-body">
+            <a href="Admin_challan" class="btn btn-primary btn-lg btn-block ">View Challan</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

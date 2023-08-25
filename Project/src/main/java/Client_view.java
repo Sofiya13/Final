@@ -11,16 +11,16 @@ import jakarta.servlet.http.HttpServletResponse;
 
 
 
-public class NotiController extends HttpServlet {
+public class Client_view extends HttpServlet {
     private static final long serialVersionUID = 1L;
-	private static final String URL = "jdbc:mysql://localhost:3306/register";
-	private static final String USERNAME = "root";
-	private static final String PASSWORD = "root";
+    private static final String URL = "jdbc:mysql://localhost:3306/register";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "root";
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
-
+String username= request.getParameter("username");
         try 
         	 {
         		try {
@@ -31,32 +31,31 @@ public class NotiController extends HttpServlet {
 					}
         			 Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
                      Statement statement = connection.createStatement();
-                     ResultSet resultSet = statement.executeQuery("SELECT * FROM info where status='no'");
+                     ResultSet resultSet = statement.executeQuery("SELECT * FROM sample WHERE username = '" + username + "'");
 
                      PrintWriter out = response.getWriter();
 
                      // Generate the HTML response
                      out.println("<html>");
-                     out.println("<head><title>New Request</title>");
+                     out.println("<head><title>Admin sample data</title>");
                      out.println("<style>");
                      out.println("a { text-decoration: none; color: black; }");
                      out.println("</style>");
                      out.println("</head>");
                      out.println("<body>");
-                     out.println("<h1>New Request</h1>");
+                     out.println("<h1>Admin sample data</h1>");
                      out.println("<table border='1'>");
-                     out.println("<tr><th>Username</th><th>Fabric Type</th><th>Sample Quantity</th><th>Contact</th><th>Date</th><th>Decision</th></tr>");
+                     out.println("<tr><th>Design</th><th>Color</th><th>Price</th><th>Date</th></tr>");
 
             // Process the ResultSet and populate the infoList
             while (resultSet.next()) {
             	  out.println("<tr>");
-                  out.println("<td>" + resultSet.getString("username") + "</td>");
-                  out.println("<td>" + resultSet.getString("fabric_type") + "</td>");
-                  out.println("<td>" +resultSet.getInt("sample_quantity")+ "</td>");
-                  out.println("<td>" +  resultSet.getLong("contact") + "</td>");
+                  out.println("<td><img src='" + request.getContextPath() + "/images/" + resultSet.getString("imgName") + "' width='100' height='100'></td>");
+                  out.println("<td>" + resultSet.getInt("color") + "</td>");
+            	  out.println("<td>" + resultSet.getInt("price") + "</td>");
                   out.println("<td>" + resultSet.getDate("date") + "</td>");
                   out.println("<td>");
-                  out.println("<button><a href='Sample_details?status=yes&id=" + resultSet.getInt("id") + "'>Accept</a></button> | <button><a href='Sample_reject?id="+ resultSet.getInt("id") + "'>Reject</a></button>");
+                  out.println("<button><a href='Client_challan.jsp?username="+username+"'>Accept</a></button> | <button><a href='Client_view'>Reject</a></button>");
                   
                   out.println("</td>");
                   out.println("</tr>");

@@ -4,6 +4,7 @@ public class Client_request {
 	private String username;
 	private String fabricType;
 	private int sampleQuantity;
+	private int price;
 	private String contact;
 	private Date date;
 	public String imageFileName;
@@ -63,6 +64,14 @@ public class Client_request {
 
 	public void setHexValue(int hexValue) {
 		this.hexValue = hexValue;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 	// Add getters and setters for the fields

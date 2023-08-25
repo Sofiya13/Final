@@ -4,14 +4,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class RequestDAO {
+public class Admin_sampleDAO {
     private String jdbcURL = "jdbc:mysql://localhost:3306/register";
     private String jdbcUsername = "root";
     private String jdbcPassword = "root";
 
-    private static final String INSERT_USER_SQL = "INSERT INTO info (username, fabric_type, sample_quantity, contact, date, imgName,color, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String INSERT_USER_SQL = "INSERT INTO sample (date, imgName, username, color, price) VALUES (?, ?, ?, ?, ?)";
 
-    public RequestDAO() {}
+    public Admin_sampleDAO() {}
 
     protected Connection getConnection() {
         Connection connection = null;
@@ -24,17 +24,15 @@ public class RequestDAO {
         return connection;
     }
 
-    public void insertUser(Client_request user) {
+    public void insertUser(Admin_sample user) {
         try (Connection connection = getConnection();
         	       PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USER_SQL)) {
-            preparedStatement.setString(1, user.getUsername());
-            preparedStatement.setString(2, user.getFabricType());
-            preparedStatement.setInt(3, user.getSampleQuantity());
-            preparedStatement.setString(4, user.getContact());
-            preparedStatement.setDate(5, new java.sql.Date(user.getDate().getTime()));
-            preparedStatement.setString(6, user.getImageFileName());
-            preparedStatement.setInt(7, user.getHexValue());
-            preparedStatement.setInt(8, user.getPrice());
+           
+            preparedStatement.setDate(1, new java.sql.Date(user.getDate().getTime()));
+            preparedStatement.setString(2, user.getImageFileName());
+            preparedStatement.setString(3,user.getUsername());
+            preparedStatement.setInt(4, user.getHexValue());
+            preparedStatement.setInt(5, user.getPrice());
 System.out.println(user.getPrice());
            int row= preparedStatement.executeUpdate();
            
