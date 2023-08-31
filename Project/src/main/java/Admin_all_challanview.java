@@ -12,8 +12,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/Admin_challan")
-public class Admin_challan extends HttpServlet {
+@WebServlet("/Admin_all_challanview")
+public class Admin_all_challanview extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private static final String URL = "jdbc:mysql://localhost:3306/register";
@@ -31,9 +31,9 @@ public class Admin_challan extends HttpServlet {
         try {
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             Statement statement = connection.createStatement();
-            String on = request.getParameter("username");
+            
 
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM challan  WHERE username='" + on + "'");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM challan ");
 
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
@@ -51,8 +51,7 @@ public class Admin_challan extends HttpServlet {
             out.println("th, td { padding: 10px; text-align: center; border: 3px solid #ddd; }");
             out.println("th { background-color: #2F3C7E; color: white; }");
             out.println("tr:nth-child(even) { background-color: #f2f2f2; }");
-//            out.println("button { background-color: #2F3C7E; color: #FBEAEB; border: none; padding: 5px 10px; cursor: pointer; }");
-//            out.println("button:hover { background-color: #E9EBE0; }");
+         
             out.println("</style>");
             out.println("</head>");
             out.println("<body>");
@@ -69,12 +68,10 @@ public class Admin_challan extends HttpServlet {
                 out.println("<td>" + resultSet.getInt("quantity") + "</td>");
                 out.println("<td>" + resultSet.getString("product_details") + "</td>");
                 out.println("<td>" + resultSet.getObject("challan_number") + "</td>");
-                out.println("<td>" + resultSet.getDouble("rate") + "</td>");                    
+                out.println("<td>" + resultSet.getDouble("rate") + "</td>");
                 out.println("<td>" + resultSet.getDouble("final_amount") + "</td>");
                 out.println("<td>" + resultSet.getObject("date") + "</td>");
-//                out.println("<td>");
-//                out.println("<button><a href=''>Collect Order</a></button> | <button><a href=''>Reject</a></button>");
-//                out.println("</td>");
+                
                 out.println("</tr>");
             }
             out.println("</table>");

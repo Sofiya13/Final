@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+ <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
+ 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
      body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #062f88, #0a3daa,#2d62d5, #062f88, #0a3daa,#2d62d5);
+      font-family: Merienda;
+      background:  #2F3C7E;
       background-size: 600% 100%;
       animation: gradient 15s ease infinite;
       display: flex;
@@ -17,11 +19,12 @@
   	  margin: 0;
      }
      .btn-primary{
-        background-color:#2952d0;
+        background-color:#2F3C7E;
      }
      
      .btn-primary:hover{
-         background-color:#ed236f;
+     color:black;
+         background-color:#ECF2CE;
      }
     @keyframes gradient {
       0% { background-position: 0% }
@@ -30,6 +33,8 @@
     }
     .card {
       animation: cardAnimation 1s ease-in-out;
+      width: 350px;
+ box-shadow: 0 0 25px #ECF2CE;
     }
 
     @keyframes cardAnimation {
@@ -69,7 +74,7 @@
           <center> <img src="https://thumbs.dreamstime.com/b/peri%C3%B3dico-l%C3%ADnea-icono-de-las-noticias-ejemplo-plano-simple-moderno-del-vector-para-el-app-m%C3%B3vil-sitio-web-o-mesa-129681986.jpg" alt="image" width="120"/></center>
           </div>
           <div class="card-body">
-            <a href="Admin_challan" class="btn btn-primary btn-lg btn-block ">View Challan</a>
+            <a href="Admin_all_challanview" class="btn btn-primary btn-lg btn-block ">View Challan</a>
           </div>
         </div>
       </div>

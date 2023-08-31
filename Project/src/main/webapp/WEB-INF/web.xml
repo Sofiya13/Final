@@ -128,6 +128,19 @@
     <servlet-class>Client_history</servlet-class>
 
     </servlet>
+    
+    <servlet-mapping>
+    <servlet-name>Admin_all_challanview</servlet-name>
+    <url-pattern>/Admin_all_challanview</url-pattern>
+</servlet-mapping>
+   
+    <servlet>
+    <servlet-name>Admin_all_challanview</servlet-name>
+    <servlet-class>Admin_all_challanview</servlet-class>
+
+    </servlet>
+     
+   
 
     </web-app>
     

@@ -11,11 +11,8 @@ public class ChallanDAO {
 	private static final String URL = "jdbc:mysql://localhost:3306/register";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
-    private DataSource dataSource;
 
-    public ChallanDAO(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
+    
 
     protected Connection getConnection() {
         Connection connection = null;
@@ -31,16 +28,14 @@ public class ChallanDAO {
     	LocalDate currentDate = LocalDate.now();
        
     	long currentTimeMillis = System.currentTimeMillis();
-    //	String date=currentDate.toString();
-    	
-    	//String[] arr= date.split(" ",2);
-    	//System.out.println(arr[0]);
+   
     	 String sql = "INSERT INTO challan (from_location, to_location, quantity, product_details, rate, final_amount, date, challan_number, username) " +
                  "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try (Connection conn = dataSource.getConnection();
+        try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, challan.getFrom_location());
+            System.out.println(challan.getFrom_location());
             pstmt.setString(2, challan.getTo_location());
             pstmt.setInt(3, challan.getQuantity());
             pstmt.setString(4, challan.getProductDetails());

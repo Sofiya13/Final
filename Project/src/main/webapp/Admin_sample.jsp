@@ -4,19 +4,22 @@
 <html>
 <head>
 <title>User Request Form</title>
+<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <style>
 body {
 	background-color: #6497b1;
+	font-family: Merienda;
 }
 
 .container {
 	background-color: #fff;
+	width: 45%;
 	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	margin-top: 50px;
+	border-radius: 22px;
+	box-shadow: 0 0 30px #0ef;
+	margin-top: 90px;
 	transition: background-color 0.3s;
 }
 
@@ -27,7 +30,7 @@ body {
 .container h1 {
 	text-align: center;
 	margin-bottom: 30px;
-	color: #007bff;
+	color: #2F3C7E;
 }
 
 .form-group label {
@@ -47,8 +50,10 @@ body {
 
 .form-group input[type="text"]:focus, .form-group input[type="number"]:focus,
 	.form-group input[type="date"]:focus {
-	border-color: #007bff;
-	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+	
+      border-color: #007bff;
+      box-shadow: 0 0 25px #0ef;
+    
 }
 
 .btn-primary {
@@ -58,7 +63,7 @@ body {
 }
 
 .btn-primary:hover {
-	background-color: #0056b3;
+	background-color: #FBEAEB;
 	border-color: #0056b3;
 	box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
 }
@@ -66,14 +71,37 @@ body {
 .btn-primary:focus {
 	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
+/* Additional styles for customization */
+.form-group input[type="color"] {
+	padding: 0;
+	border: none;
+}
+
+.container {
+	background-color: #f5f5f5;
+}
+
+.btn-primary {
+	background-color: #2F3C7E;
+	border-color: #2F3C7E;
+	color: #fff;
+}
+
+.btn-primary:hover {
+	background-color: #FBEAEB;
+	color: #2F3C7E;
+	border-color: #1A2250;
+}
 </style>
 </head>
 <body>
 	<div class="container">
 		<h1>Admin Sample Page</h1>
-		<form action="Admin_sampleController?username=<%= request.getParameter("username") %>" method="post"
-			enctype="multipart/form-data">
-		
+		<form
+			action="Admin_sampleController?username=<%=request.getParameter("username")%>"
+			method="post" enctype="multipart/form-data">
+
 			<div class="form-group">
 				<label for="design_image">Select Design:</label> <input type="file"
 					id="design_image" name="design_image"
@@ -91,10 +119,8 @@ body {
 				<label for="date">Date:</label> <input type="date" id="date"
 					name="date" required>
 			</div>
-		
-        <button type="submit" name="submit">Submit</button>
-                         
-        
+
+			<button type="submit" class="btn btn-primary" name="submit">Submit</button>
 
 		</form>
 	</div>

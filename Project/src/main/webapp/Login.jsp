@@ -6,19 +6,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Login</title>
 <link rel="stylesheet" id="style.css">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+	rel='stylesheet'>
 </head>
 
 <style>
 @import
 	url('https://fonts.googleapis.com/css2?family=poppins:wght#300;400;500;600;700;800;900&display=swap')
-;
+	;
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -26,7 +27,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: black;
+	background: #2F3C7E;
+	font-family: "Courier New", Courier;
 }
 
 .wrapper {
@@ -44,7 +46,6 @@ body {
 	top: 0;
 	width: 50%;
 	height: 100%;
-	
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -70,28 +71,27 @@ body {
 
 .input-box input {
 	width: 100%;
-    height: 111%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #fff;
-    margin-top: 7px;
-    font-size: 23px;
-    transition: .5s;
-    color: #fff;
-    font-weight: 500;
-    padding-right: 23px;
+	height: 111%;
+	background: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid #fff;
+	margin-top: 7px;
+	font-size: 23px;
+	transition: .5s;
+	color: #fff;
+	font-weight: 500;
+	padding-right: 23px;
 }
 
-.input-box input:focus,
- .input-box input:valid {
+.input-box input:focus, .input-box input:valid {
 	border-bottom-color: #0ef;
 }
 
 .input-box label {
 	position: absolute;
 	top: 50%;
-	left:43px;
+	left: 43px;
 	transform: translate(-50%);
 	font-size: 18px;
 	color: #fff;
@@ -99,8 +99,7 @@ body {
 	transition: .5s;
 }
 
-.input-box input:focus~label, 
-.input-box input:valid~label {
+.input-box input:focus ~label, .input-box input:valid ~label {
 	top: -5px;
 	color: #Oef;
 }
@@ -115,12 +114,12 @@ body {
 	transition: .5s;
 }
 
-.input-box input:focus~i,
- .input-box input:valid~i {
+.input-box input:focus ~i, .input-box input:valid ~i {
 	color: #0ef;
 }
 
 .btn {
+	margin-top: 26px;
 	position: relative;
 	width: 100%;
 	height: 45px;
@@ -129,8 +128,8 @@ body {
 	outline: none;
 	border-radius: 40px;
 	cursor: pointer;
-	font-size: 16px;
-	color: #fff;
+	font-size: 20px;
+	color: #2F3C7E;
 	font-weight: 600;
 	z-index: 1;
 	overflow: hidden;
@@ -143,7 +142,7 @@ body {
 	left: 0;
 	width: 100%;
 	height: 300%;
-	background: linear-gradient(black, cyan, black, aqua);
+	background: linear-gradient(#A9A654, #619CE9, #A9A654, #619CE9);
 	z-index: -1;
 	transition: .5s;
 }
@@ -164,15 +163,16 @@ body {
 	text-decoration: none;
 	font-weight: 600;
 }
-.logreg-link p a:hover{
-text-decoration: underline;
+
+.logreg-link p a:hover {
+	text-decoration: underline;
 }
+
 .wrapper .info-text {
 	position: absolute;
 	top: 0;
 	width: 50%;
 	height: 100%;
-	
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -185,8 +185,8 @@ text-decoration: underline;
 }
 
 .info-text h2 {
-	font-size: 36px;
-	color: #fff;
+	font-size: 45px;
+	color: #2F3C7E;
 	line-height: 1.3;
 	text-transform: uppercase;
 }
@@ -195,16 +195,19 @@ text-decoration: underline;
 	font-size: 16px;
 	color: #fff;
 }
-span{
-padding-bottom: 16px;
-width: 60%;}
+
+span {
+	padding-bottom: 16px;
+	width: 60%;
+}
+
 .wrapper .bg-animate {
 	position: absolute;
 	top: -4px;
 	right: 0;
 	width: 850px;
 	height: 600px;
-	background: linear-gradient(45deg, black, aqua);
+	background: linear-gradient(45deg, #A9A654, #FBEAEB);
 	border-bottom: 3px solid #0ef;
 	transform: rotate(10deg) skewY(40deg);
 	transform-origin: bottom right;
@@ -218,30 +221,28 @@ width: 60%;}
 			<h2>Login</h2>
 			<form action="LoginController" method="post">
 				<div class="input-box">
-					<input type="text" name="username" required> 
-					<label>Username</label> <i
-						class='bx bxs-user'></i>
+					<input type="text" name="username" required> <label>Username</label>
+					<i class='bx bxs-user'></i>
 				</div>
 				<div class="input-box">
-					<input type="password" name="password" required> <label>Password</label> <i
-						class='bx bxs-lock-alt'></i>
+					<input type="password" name="password" required> <label>Password</label>
+					<i class='bx bxs-lock-alt'></i>
 				</div>
 				<button type="submit" class="btn">Login</button>
 
 				<div class="logreg-link">
-				<span
-					style="width: 48%; text-align: left; display: inline-block;"><a
-				class="small-text" href="#">Forgot password?</a></span>
+					<span style="width: 48%; text-align: left; display: inline-block;"><a
+						class="small-text" href="#"
+						style="color: #FBEAEB; font-size: 13px;">Forgot password?</a></span>
 					<p>
-						Don't have an account? <a  href="Registration.jsp">
-							Sign-Up</a>
+						Don't have an account? <a href="Registration.jsp"> Sign-Up</a>
 					</p>
 				</div>
 			</form>
 		</div>
 		<div class="info-text login">
 			<h2>Welcome Back!</h2>
-			
+
 
 		</div>
 	</div>

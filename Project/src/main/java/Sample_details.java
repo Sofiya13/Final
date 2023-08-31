@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -44,19 +43,30 @@ public class Sample_details extends HttpServlet {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM info where status='yes'");
 
+            response.setContentType("text/html");
             PrintWriter out = response.getWriter();
 
             // Generate the HTML response
             out.println("<html>");
             out.println("<head><title> Request Details</title>");
+            out.println("<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>");
             out.println("<style>");
-            out.println("a { text-decoration: none; color: black; }");
+            out.println("body { font-family: Merienda; text-align: center; background-color: #E9EBE0; }");
+            out.println("h1 { text-align: center; margin-top: 20px; }");
+            out.println("table { border-collapse: collapse; margin: 20px auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 22px; }"); // Added border-radius
+            out.println("th, td { padding: 10px 20px; text-align: center; border: 2px solid #ddd; }");
+            out.println("th { background-color: #2F3C7E; color: white; }");
+            out.println("tr:nth-child(even) { background-color: #f2f2f2; }");
+            out.println("a { text-decoration: none; color: #E9EBE0; }");
+            out.println("button { background-color: #2F3C7E; color: #FBEAEB; border: none; padding: 5px 10px; cursor: pointer; }");
+            out.println("a:hover {  color:black;}");
+            out.println("button:hover{background-color: #E9EBE0;}");
             out.println("</style>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>All details of Sample</h1>");
-            out.println("<table border='1'>");
-            out.println("<tr><th>Username</th><th>Fabric Type</th><th>Sample Quantity</th><th>Price</th><th>Contact</th><th>Color_Hexcode</th><th>Design_image</th><th>Date</th></tr>");
+            out.println("<table>");
+            out.println("<tr><th>Username</th><th>Fabric Type</th><th>Sample Quantity</th><th>Price</th><th>Contact</th><th>Color Hexcode</th><th>Design Image</th><th>Date</th><th>Upload Sample</th><th>View Challan</th></tr>");
 
             // Process the ResultSet and populate the infoList
             while (resultSet.next()) {
@@ -66,19 +76,15 @@ public class Sample_details extends HttpServlet {
                 out.println("<td>" + resultSet.getInt("sample_quantity") + "</td>");
                 out.println("<td>" + resultSet.getInt("price") + "</td>");
                 out.println("<td>" + resultSet.getLong("contact") + "</td>");
-               
                 out.println("<td>" + resultSet.getInt("color") + "</td>");
                 out.println("<td><img src='" + request.getContextPath() + "/images/" + resultSet.getString("imgName") + "' width='100' height='100'></td>");
                 out.println("<td>" + resultSet.getDate("date") + "</td>");
                 out.println("<td>");
-                out.println("    <button><a href=\"Admin_sample.jsp?username="+ resultSet.getString("username") + "\">Upload Sample</a></button>");
+                out.println("<button><a href=\"Admin_sample.jsp?username=" + resultSet.getString("username") + "\">Upload Sample</a></button>");
                 out.println("</td>");
                 out.println("<td>");
-                out.println("    <button><a href=\"Admin_challan?username="+ resultSet.getString("username") + "\">View Challan</a></button>");
-
+                out.println("<button><a href=\"Admin_challan?username=" + resultSet.getString("username") + "\">View Challan</a></button>");
                 out.println("</td>");
-
-
                 out.println("</tr>");
             }
             out.println("</table>");

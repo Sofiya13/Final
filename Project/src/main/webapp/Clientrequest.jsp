@@ -6,30 +6,30 @@
 <title>User Request Form</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Merienda'
+	rel='stylesheet'>
+
 <style>
 body {
 	background-color: #6497b1;
+	font-family: Merienda;
 }
 
 .container {
-	background-color: #fff;
+	background-color: #FBEAEB;
 	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	margin-top: 50px;
-	transition: background-color 0.3s;
+	border-radius: 20px;
+	box-shadow: 0 0 25px #0ef;
+		margin-top: 50px;
 	width: 50%;
+	
 }
 
-.container:hover {
-	background-color: #f5f5f5;
-}
 
 .container h1 {
 	text-align: center;
 	margin-bottom: 30px;
-	color: #007bff;
-	
+	color: #2F3C7E;
 }
 
 .form-group label {
@@ -44,41 +44,44 @@ body {
 	font-size: 16px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-	transition: border-color 0.3s, box-shadow 0.3s;
-	
 }
 
 .form-group input[type="text"]:focus, .form-group input[type="number"]:focus,
 	.form-group input[type="date"]:focus {
 	border-color: #007bff;
-	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
+	box-shadow: 0 0 25px #0ef;}
 
-.btn-primary {
-	background-color: #007bff;
-	border-color: #007bff;
-	transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+.btn {
+	 background-color: #2F3C7E; 
+	 color: #FBEAEB; 
+	 border: none;
+	
+	   cursor: pointer;
 }
+  .btn-primary{
+        background-color:#2952d0;
+     }
+     
+     .btn-primary:hover{
+         background-color:#ed236f;
+     }
 
-.btn-primary:hover {
-	background-color: #0056b3;
-	border-color: #0056b3;
-	box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-}
 
-.btn-primary:focus {
-	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
+
+
+
 </style>
 </head>
 <body>
 	<div class="container">
 		<h1>User Request Form</h1>
-		<form action="RequestController?username=<%= request.getParameter("username") %>" method="post"
-			enctype="multipart/form-data">
+		<form
+			action="RequestController?username=<%=request.getParameter("username")%>"
+			method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="username">Username:</label> <input type="text"
-					id="username" name="username"  value="<%= request.getParameter("username") %>" disabled="disabled">
+					id="username" name="username"
+					value="<%=request.getParameter("username")%>" disabled="disabled">
 			</div>
 			<div class="form-group">
 				<label for="fabric_type">Fabric Type:</label> <input type="text"
@@ -111,10 +114,10 @@ body {
 				<label for="date">Date:</label> <input type="date" id="date"
 					name="date" required>
 			</div>
-		
-        <button type="submit" name="submit">Submit</button>
-                         <button><a href="Client_challan?id=<%= request.getParameter("id")%>"></a>Make Challan</button>
-        
+
+			<button class="btn" name="submit">Submit</button>
+			
+
 
 		</form>
 	</div>
