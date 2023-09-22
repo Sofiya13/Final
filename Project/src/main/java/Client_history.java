@@ -41,7 +41,7 @@ public class Client_history extends HttpServlet {
                      out.println("<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>");
                      out.println("<style>");
                      out.println("a { text-decoration: none; color: black; }");
-                     out.println("body { font-family: Merienda; background-color: #F8FAE0; }");
+                     out.println("body { font-family: Merienda; background-image:url('http://clipart-library.com/images/Lid5eaq7T.png');  background-size: cover; background-repeat: no-repeat;}");
                      out.println("h1 { text-align: center; margin-top: 20px; color: #2F3C7E; }");
                      out.println("table { margin: auto; border-collapse: collapse; width: 80%; background-color: #fff; }");
                      out.println("th, td { padding: 10px; text-align: center; border: 1px solid #ddd; }");
@@ -70,7 +70,7 @@ public class Client_history extends HttpServlet {
                 out.println("</html>");
 
                 out.close();
-            
+
             
         } catch (SQLException e) {
             e.printStackTrace();
@@ -81,6 +81,5 @@ public class Client_history extends HttpServlet {
 
         // Forward the infoList to the JSP view for display
         
-        request.getRequestDispatcher("client.jsp").forward(request, response);
     }
 }

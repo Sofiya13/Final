@@ -36,18 +36,18 @@ public class Admin_sampleController extends HttpServlet {
         int price1 = Integer.parseInt(request.getParameter("price"));
         
         String hexValueStr = request.getParameter("hexValue");
-        int hexValue = 0;        
-
-        if (hexValueStr != null && !hexValueStr.isEmpty()) {
-            if (hexValueStr.startsWith("#")) {
-                hexValueStr = hexValueStr.substring(1);
-            }
-
-            // Parse the hexadecimal string
-            hexValue = Integer.parseInt(hexValueStr, 16);
-        }
-        Color color1 = new Color(hexValue);
-        System.out.println(color1);
+//        int hexValue = 0;        
+//
+//        if (hexValueStr != null && !hexValueStr.isEmpty()) {
+//            if (hexValueStr.startsWith("#")) {
+//                hexValueStr = hexValueStr.substring(1);
+//            }
+//
+//            // Parse the hexadecimal string
+//            hexValue = Integer.parseInt(hexValueStr, 16);
+//        }
+//        Color color1 = new Color(hexValue);
+//        System.out.println(color1);
 
         String imageFileName=file.getSubmittedFileName();
         System.out.println("Selected Image File Name : "+imageFileName);
@@ -83,7 +83,7 @@ public class Admin_sampleController extends HttpServlet {
        user.setUsername(request.getParameter("username"));
         user.setDate(date);
         user.setImageFileName(imageFileName);
-        user.setHexValue(hexValue);
+        user.setHexValue(hexValueStr);
         user.setPrice(price1);
 
         admin_sampleDAO.insertUser(user);
@@ -93,4 +93,18 @@ public class Admin_sampleController extends HttpServlet {
 
         response.sendRedirect("Sample_details?username="+ request.getParameter("username") ); // Replace with your success page URL
     }
+	 public static String convertToHex(String htmlColor) {
+	        // Create a Color object from the HTML color
+	        Color color = Color.decode(htmlColor);
+
+	        // Get the RGB values from the Color object
+	        int red = color.getRed();
+	        int green = color.getGreen();
+	        int blue = color.getBlue();
+
+	        // Convert the RGB values to a hexadecimal color code
+	        String hexColor = String.format("#%02X%02X%02X", red, green, blue);
+
+	        return hexColor;
+	    }
 }

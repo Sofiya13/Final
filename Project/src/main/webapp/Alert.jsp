@@ -4,37 +4,41 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Registration</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+<title>Login</title>
+<link rel="stylesheet" id="style.css">
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+	rel='stylesheet'>
+</head>
+
 <style>
 @import
-	url('https://fonts.googleapis.com/css2?family=Poppins:wght#300;400;500;600;700;800;900&display=swap')
+	url('https://fonts.googleapis.com/css2?family=poppins:wght#300;400;500;600;700;800;900&display=swap')
 	;
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Courier New", Courier;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://www.wallpaperandblindslongisland.com/wp-content/uploads/2018/05/wallpaper-with-shade.png');
+    background-size: cover; /* Set the background size to cover the full page */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    font-family: "Courier New", Courier;
+    opacity: 0.7;
 }
 
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	background-image: url('https://www.ttfs.com.au/wp-content/uploads/2017/02/shade-cloth.jpg');
-	background-position: top;
-	 background-size: cover; /* Set the background size to cover the full page */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
-    opacity: 0.8;
-	}
+
 
 .wrapper {
 	position: relative;
 	width: 750px;
-	height: 650px;
+	height: 450px;
 	background: black;
 	border: 1px solid #0ef;
 	overflow: hidden;
@@ -51,13 +55,12 @@ body {
 	justify-content: center;
 }
 
-.wrapper .form-box.register {
-	right: 0;
-	padding: 0 40px 0 60px;
+.wrapper .form-box.login {
+	left: 0;
+	padding: 0 60px 0 40px;
 }
 
 .form-box h2 {
-	padding-top: 50px;
 	font-size: 39px;
 	color: #fff;
 	text-align: center;
@@ -102,7 +105,7 @@ body {
 
 .input-box input:focus ~label, .input-box input:valid ~label {
 	top: -5px;
-	color: #0ef;
+	color: #Oef;
 }
 
 .input-box i {
@@ -119,22 +122,21 @@ body {
 	color: #0ef;
 }
 
-.btn {
-	margin-top: 10px;
+.btn{
+	margin-top: 26px;
 	position: relative;
 	width: 100%;
 	height: 45px;
 	background: transparent;
-	border: 2px solid #0ef;
+	border: 3px solid #0ef;
 	outline: none;
 	border-radius: 40px;
 	cursor: pointer;
-	font-size: 22px;
+	font-size: 20px;
 	color: #2F3C7E;
 	font-weight: 600;
 	z-index: 1;
 	overflow: hidden;
-	position: relative;
 }
 
 .btn::before {
@@ -154,10 +156,10 @@ body {
 }
 
 .form-box .logreg-link {
-	font-size: 15px;
+	font-size: 14.5px;
 	color: #fff;
 	text-align: center;
-	margin: 30px 0 20px;
+	margin: 20px 0 10px;
 }
 
 .logreg-link p a {
@@ -180,23 +182,22 @@ body {
 	justify-content: center;
 }
 
-.wrapper .info-text.register {
-	left: 0;
-	text-align: left;
-	padding: 0 150px 60px 40px;
-	margin-top: -99px;
+.wrapper .info-text.login {
+	right: 0;
+	text-align: right;
+	padding: 0 40px 60px 150px;
 }
 
 .info-text h2 {
-	font-size: 40px;
-	color: #fff;
+	font-size: 45px;
+	color: #2F3C7E;
 	line-height: 1.3;
 	text-transform: uppercase;
 }
 
 .info-text p {
-	font-size: 20px;
-	color: black;
+	font-size: 16px;
+	color: #fff;
 }
 
 span {
@@ -204,61 +205,39 @@ span {
 	width: 60%;
 }
 
-.wrapper .bg-animate2 {
+.wrapper .bg-animate {
 	position: absolute;
-	top: 100px;
-	left: -50px;
+	top: -4px;
+	right: 0;
 	width: 850px;
 	height: 600px;
 	background: linear-gradient(45deg, #A9A654, #FBEAEB);
 	border-bottom: 3px solid #0ef;
-	transform: rotate(-11deg) skewY(-41deg);
-	transform-origin: bottom left;
+	transform: rotate(10deg) skewY(40deg);
+	transform-origin: bottom right;
 }
 </style>
-</head>
+
 <body>
 	<div class="wrapper">
-		<span class="bg-animate2"></span>
-		<div class="form-box register">
-			<h2>Sign Up</h2>
-			<form action="RegistrationController" method="post">
-				<div class="input-box">
-					<input type="text" name="username" required> <label>Username</label>
-					<i class='bx bxs-user'></i>
-				</div>
-				<div class="input-box">
-					<input type="password" name="password" required> <label>Password</label>
-					<i class='bx bxs-lock-alt'></i>
-				</div>
-				<div class="input-box">
-					<input type="text" required name="email"> <label
-						style="left: 25px">Email</label> <i class='bx bxs-envelope'></i>
-				</div>
-				<div class="input-box">
-					<input type="text" name="fullname" required> <label>Full
-						Name</label> <i class='bx bxs-edit-alt'></i>
-				</div>
-				<div class="input-box">
-					<input type="text" name="contact" required maxlength="10">
-					<label style="left: 30px">Contact</label> <i class='bx bx-phone'></i>
-				</div>
-				<button type="submit" class="btn">Sign up</button>
+		<span class="bg-animate"></span>
+		<div class="form-box login">
+			<h2>Login</h2>
+			<form method="post">
+    <div class="input-box">
+        <input type="text" name="username" required> <label>Username</label>
+        <i class='bx bxs-user'></i>
+    </div>
+    <button type="submit" class="btn" formaction="MailSender">Send OTP</button>
+    <div class="input-box">
+        <input type="text" name="otp"> <label>Enter OTP</label>
+        <i class='bx bxs-lock-alt'></i>
+    </div>
+    <button type="submit" class="btn" formaction="Otp_verifying">Submit</button>
+</form>
 
-				<div class="logreg-link">
-					<span style="width: 48%; text-align: left; display: inline-block;"><a
-						class="small-text" href="#" style="color: #FBEAEB; font-size: 13px;">Forgot
-							password?</a></span>
-					<p>
-						Already have an account? <a href="Login.jsp"> Login</a>
-					</p>
-				</div>
-			</form>
-		</div>
-		<div class="info-text register">
-			<h2 style="color: #2F3C7E">Welcome Back!</h2>
-			<p>Please fill in this form to create an account!</p>
 		</div>
 	</div>
 </body>
+
 </html>

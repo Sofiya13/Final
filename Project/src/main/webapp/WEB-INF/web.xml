@@ -139,7 +139,28 @@
     <servlet-class>Admin_all_challanview</servlet-class>
 
     </servlet>
-     
+     <servlet-mapping>
+    <servlet-name>Before_challan</servlet-name>
+    <url-pattern>/Before_challan</url-pattern>
+</servlet-mapping>
+   
+    <servlet>
+    <servlet-name>Before_challan</servlet-name>
+    <servlet-class>Before_challan</servlet-class>
+
+    </servlet>
+    
+     <servlet-mapping>
+    <servlet-name>Otp_verifying</servlet-name>
+    <url-pattern>/Otp_verifying</url-pattern>
+</servlet-mapping>
+   
+    <servlet>
+    <servlet-name>Otp_verifying</servlet-name>
+    <servlet-class>Otp_verifying</servlet-class>
+
+    </servlet>
+    
    
 
     </web-app>

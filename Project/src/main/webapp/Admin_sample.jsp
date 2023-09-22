@@ -9,18 +9,24 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <style>
 body {
-	background-color: #6497b1;
+	background-image:url('https://d1yn1kh78jj1rr.cloudfront.net/image/preview/rDtN98Qoishumwih/light-blue-background_GkNvxFHd_PM.jpg');
+	 background-size: cover; /* Set the background size to cover the full page */
+    background-repeat: no-repeat;
 	font-family: Merienda;
 }
 
 .container {
-	background-color: #fff;
+	background-image: url('https://cdn.wallpapersafari.com/8/68/i7xkMe.jpg');
+	background-size: cover; /* Set the background size to cover the full page */
+    background-repeat: no-repeat;
 	width: 45%;
 	padding: 20px;
 	border-radius: 22px;
 	box-shadow: 0 0 30px #0ef;
 	margin-top: 90px;
 	transition: background-color 0.3s;
+	
+	background-color: #f5f5f5;
 }
 
 .container:hover {
@@ -30,7 +36,7 @@ body {
 .container h1 {
 	text-align: center;
 	margin-bottom: 30px;
-	color: #2F3C7E;
+	color: black;
 }
 
 .form-group label {
@@ -56,17 +62,7 @@ body {
     
 }
 
-.btn-primary {
-	background-color: #007bff;
-	border-color: #007bff;
-	transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
-}
 
-.btn-primary:hover {
-	background-color: #FBEAEB;
-	border-color: #0056b3;
-	box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-}
 
 .btn-primary:focus {
 	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -78,14 +74,15 @@ body {
 	border: none;
 }
 
-.container {
-	background-color: #f5f5f5;
-}
 
 .btn-primary {
 	background-color: #2F3C7E;
 	border-color: #2F3C7E;
 	color: #fff;
+	margin-left: 230px;
+	padding-left:50px;
+padding-right:50px;
+font-size: 20px;
 }
 
 .btn-primary:hover {

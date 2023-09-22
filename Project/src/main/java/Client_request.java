@@ -8,7 +8,7 @@ public class Client_request {
 	private String contact;
 	private Date date;
 	public String imageFileName;
-	private int hexValue;
+	private String hexValue;
 
 	public String getUsername() {
 		return username;
@@ -58,11 +58,11 @@ public class Client_request {
 		this.imageFileName = imageFileName;
 	}
 
-	public int getHexValue() {
+	public String getHexValue() {
 		return hexValue;
 	}
 
-	public void setHexValue(int hexValue) {
+	public void setHexValue(String hexValue) {
 		this.hexValue = hexValue;
 	}
 

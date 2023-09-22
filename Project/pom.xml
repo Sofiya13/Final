@@ -18,6 +18,25 @@
         <artifactId>javax.servlet-api</artifactId>
         <version>4.0.1</version>
     </dependency>
+      
+    <!-- JavaBeans Activation Framework -->
+    <dependency>
+        <groupId>javax.activation</groupId>
+        <artifactId>javax.activation-api</artifactId>
+        <version>1.2.0</version>
+    </dependency>
+
+    <!-- JavaMail API -->
+    <dependency>
+        <groupId>javax.mail</groupId>
+        <artifactId>javax.mail-api</artifactId>
+        <version>1.6.2</version>
+    </dependency>
+<dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>javax.mail</artifactId>
+    <version>1.6.2</version> <!-- You can specify the latest version -->
+</dependency>
 </dependencies>
 
   <build>

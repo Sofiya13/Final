@@ -11,7 +11,9 @@
 	rel='stylesheet'>
 <style>
 body {
-	background-color: #6497b1;
+	background-image:url('https://tse4.mm.bing.net/th?id=OIP.3mx0o0bILDARyrR_ytJW2gHaEo&pid=Api&P=0&h=180');
+       background-size: cover; /* Set the background size to cover the full page */
+    background-repeat: no-repeat; 
 	font-family: Merienda;
 }
 
@@ -24,7 +26,8 @@ body {
 }
 
 label {
-	font-size: 20px;
+	font-size: 23px;
+	margin:10px;
 }
 
 .container h2 {
@@ -43,28 +46,24 @@ label {
 	box-shadow: 0 0 25px #0ef;
 }
 
+
 .btn-primary {
 	background-color: #2F3C7E;
-	border-color: #2F3C7E;
-	color: #fff;
+	border-color: #007bff;
+	transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+	  margin-left: 290px;
+	  margin-top:13px;
+	 padding: 10px;
+	 padding-left: 50px;
+	 padding-right: 45px;
+	
+	 font-size: 19px;
 }
 
 .btn-primary:hover {
 	background-color: #FBEAEB;
 	color: #2F3C7E;
 	border-color: #1A2250;
-}
-
-.btn-primary {
-	background-color: #2F3C7E;
-	border-color: #007bff;
-	transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
-}
-
-.btn-primary:hover {
-	background-color: #FBEAEB;
-	border-color: #0056b3;
-	box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
 }
 
 .btn-primary:focus {
@@ -81,32 +80,32 @@ label {
 				value="<%=request.getParameter("username")%>">
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label for="from">From</label> <input type="text"
+					<label for="from">From: </label> <input type="text"
 						class="form-control" id="from" name="from"
 						value="<%=request.getParameter("username")%>" disabled="disabled">
 				</div>
 				<div class="form-group col-md-6">
-					<label for="to">To</label> <input type="text" class="form-control"
+					<label for="to">To:</label> <input type="text" class="form-control"
 						id="to" name="to" value="Admin" disabled="disabled">
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-4">
-					<label for="quantity">Quantity</label> <input type="number"
+					<label for="quantity">Quantity:</label> <input type="number"
 						class="form-control" id="quantity" name="quantity" required>
 				</div>
 				<div class="form-group col-md-4">
-					<label for="productDetails">Product Details</label> <input
+					<label for="productDetails">Product Details:</label> <input
 						type="text" class="form-control" id="productDetails"
 						name="productDetails" required>
 				</div>
 				<div class="form-group col-md-4">
-					<label for="rate">Rate</label> <input type="number"
+					<label for="rate">Rate:</label> <input type="number"
 						class="form-control" id="rate" name="rate" required>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="finalAmount">Final Amount</label> <input type="number"
+				<label for="finalAmount">Final Amount:</label> <input type="number"
 					class="form-control" id="finalAmount" name="finalAmount" required>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>			

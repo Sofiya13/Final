@@ -31,5 +31,6 @@ public class ChallanServlet extends HttpServlet {
         } else {
             response.getWriter().println("Failed to insert challan.");
         }
+        request.getRequestDispatcher("client.jsp").forward(request, response);
     }
 }

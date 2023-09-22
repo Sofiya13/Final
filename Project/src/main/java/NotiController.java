@@ -34,7 +34,7 @@ public class NotiController extends HttpServlet {
             out.println("<head><title>New Request</title>");
             out.println("<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>");
             out.println("<style>");
-            out.println("body { font-family:'Merienda'; text-align: center; background-color: #E9EBE0; }");
+            out.println("body { font-family:'Merienda'; text-align: center; background-image:url('http://www.pixelstalk.net/wp-content/uploads/2016/06/Photos-Light-Blue-HD-Backgrounds.jpg'); background-size: cover; background-repeat: no-repeat;}");
             out.println("table { border-collapse: collapse; margin: 20px auto; box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); }");
             out.println("th, td { padding: 10px 20px; text-align: center; border: 2px solid #ddd; }");
             out.println("th { background-color: #2F3C7E; color: white; }");
@@ -42,7 +42,7 @@ public class NotiController extends HttpServlet {
             out.println("a { text-decoration: none; color: #E9EBE0; }");
             out.println("button { background-color: #2F3C7E; color: #FBEAEB; border: none; padding: 5px 10px; cursor: pointer; }");
             out.println("a:hover {  color:black;}");
-            out.println("h1{ color: #2F3C7E;}");
+            out.println("h1{ color: black;}");
             out.println("button:hover{background-color: #E9EBE0;}");
             out.println("</style>");
             out.println("</head>");

@@ -21,22 +21,26 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	background: #2F3C7E;
-	font-family: "Courier New", Courier;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://www.wallpaperandblindslongisland.com/wp-content/uploads/2018/05/wallpaper-with-shade.png');
+    background-size: cover; /* Set the background size to cover the full page */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    font-family: "Courier New", Courier;
+    opacity: 0.7;
 }
+
+
 
 .wrapper {
 	position: relative;
 	width: 750px;
 	height: 450px;
-	background: transparent;
-	border: 2px solid #0ef;
+	background: black;
+	border: 1px solid #0ef;
 	overflow: hidden;
 	box-shadow: 0 0 25px #0ef;
 }
@@ -57,7 +61,7 @@ body {
 }
 
 .form-box h2 {
-	font-size: 32px;
+	font-size: 39px;
 	color: #fff;
 	text-align: center;
 }
@@ -232,7 +236,7 @@ span {
 
 				<div class="logreg-link">
 					<span style="width: 48%; text-align: left; display: inline-block;"><a
-						class="small-text" href="#"
+						class="small-text" href="Alert.jsp"
 						style="color: #FBEAEB; font-size: 13px;">Forgot password?</a></span>
 					<p>
 						Don't have an account? <a href="Registration.jsp"> Sign-Up</a>

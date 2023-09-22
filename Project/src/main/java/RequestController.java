@@ -34,18 +34,25 @@ public class RequestController extends HttpServlet {
         int price1 = Integer.parseInt(request.getParameter("price"));
         
         String hexValueStr = request.getParameter("hexValue");
-        int hexValue = 0;        
-
-        if (hexValueStr != null && !hexValueStr.isEmpty()) {
-            if (hexValueStr.startsWith("#")) {
-                hexValueStr = hexValueStr.substring(1);
-            }
-
-            // Parse the hexadecimal string
-            hexValue = Integer.parseInt(hexValueStr, 16);
-        }
-        Color color1 = new Color(hexValue);
-        System.out.println(color1);
+        System.out.println(hexValueStr);
+//        int hexValue = 0;        
+//
+//        if (hexValueStr != null && !hexValueStr.isEmpty()) {
+//            // Remove any leading "#" character
+//            hexValueStr = hexValueStr.replace("#", "");
+//
+//            try {
+//                // Parse the hexadecimal string
+//                hexValue = Integer.parseInt(hexValueStr, 16);
+//            } catch (NumberFormatException e) {
+//                e.printStackTrace();
+//                // Handle the case where the input is not a valid hex code
+//                // You may want to provide a default color or an error message.
+//            }
+//        }
+//        System.out.println(hexValue);
+//        Color color1 = new Color(hexValue);
+//        System.out.println(color1);
 
         String imageFileName=file.getSubmittedFileName();
         System.out.println("Selected Image File Name : "+imageFileName);
@@ -86,7 +93,7 @@ public class RequestController extends HttpServlet {
         user.setContact(contact);
         user.setDate(date);
         user.setImageFileName(imageFileName);
-        user.setHexValue(hexValue);
+        user.setHexValue(hexValueStr);
         user.setPrice(price1);
 
         requestDAO.insertUser(user);
@@ -94,6 +101,20 @@ public class RequestController extends HttpServlet {
         // You can add additional logic here, e.g., redirecting to a success page.
         // For simplicity, we're not adding any further processing in this example.
 
-        response.sendRedirect("Client_view?username="+ request.getParameter("username") ); // Replace with your success page URL
+        response.sendRedirect("client.jsp?username="+ request.getParameter("username") ); // Replace with your success page URL
+    }
+    public static String convertToHex(String htmlColor) {
+        // Create a Color object from the HTML color
+        Color color = Color.decode(htmlColor);
+
+        // Get the RGB values from the Color object
+        int red = color.getRed();
+        int green = color.getGreen();
+        int blue = color.getBlue();
+
+        // Convert the RGB values to a hexadecimal color code
+        String hexColor = String.format("#%02X%02X%02X", red, green, blue);
+
+        return hexColor;
     }
 }

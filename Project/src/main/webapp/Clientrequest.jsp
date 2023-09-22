@@ -11,17 +11,24 @@
 
 <style>
 body {
-	background-color: #6497b1;
-	font-family: Merienda;
+	background-image:url('https://images.unsplash.com/photo-1506220926022-cc5c12acdb35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+	  background-size: cover; 
+        background-repeat: no-repeat;
+        background-position:top;
+        font-family: Merienda;
+        padding-right: 200px;
 }
 
 .container {
-	background-color: #FBEAEB;
+	background-image: url('http://www.pixelstalk.net/wp-content/uploads/2016/06/Photos-Light-Blue-HD-Backgrounds.jpg');
+	        background-position:right 70%;
+	
 	padding: 20px;
 	border-radius: 20px;
-	box-shadow: 0 0 25px #0ef;
-		margin-top: 50px;
+		margin-top: 40px;
 	width: 50%;
+	
+	
 	
 }
 
@@ -29,12 +36,13 @@ body {
 .container h1 {
 	text-align: center;
 	margin-bottom: 30px;
-	color: #2F3C7E;
+	color: black;
 }
 
 .form-group label {
 	font-weight: bold;
 	font-size: 20px;
+	margin: 11px;
 }
 
 .form-group input[type="text"], .form-group input[type="number"],
@@ -55,8 +63,12 @@ body {
 	 background-color: #2F3C7E; 
 	 color: #FBEAEB; 
 	 border: none;
-	
 	   cursor: pointer;
+	  margin-left: 220px;
+	 padding: 10px;
+	 padding-left: 50px;
+	 padding-right: 50px;
+	 font-size: 21px;
 }
   .btn-primary{
         background-color:#2952d0;
@@ -107,7 +119,7 @@ body {
 			</div>
 			<div class="form-group">
 				<label for="contact">Contact:</label> <input type="text"
-					id="contact" name="contact" required>
+					id="contact" name="contact" required maxlength="10">
 			</div>
 
 			<div class="form-group">

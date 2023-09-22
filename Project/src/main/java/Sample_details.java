@@ -51,16 +51,16 @@ public class Sample_details extends HttpServlet {
             out.println("<head><title> Request Details</title>");
             out.println("<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>");
             out.println("<style>");
-            out.println("body { font-family: Merienda; text-align: center; background-color: #E9EBE0; }");
+            out.println("body { font-family: Merienda; text-align: center; background-image:url('https://images.unsplash.com/photo-1517495306984-f84210f9daa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80'); background-size: cover; background-repeat: no-repeat; }");
             out.println("h1 { text-align: center; margin-top: 20px; }");
             out.println("table { border-collapse: collapse; margin: 20px auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 22px; }"); // Added border-radius
             out.println("th, td { padding: 10px 20px; text-align: center; border: 2px solid #ddd; }");
             out.println("th { background-color: #2F3C7E; color: white; }");
-            out.println("tr:nth-child(even) { background-color: #f2f2f2; }");
+            out.println("tr:nth-child(even) { background-color: #fbe7f6; }");
             out.println("a { text-decoration: none; color: #E9EBE0; }");
             out.println("button { background-color: #2F3C7E; color: #FBEAEB; border: none; padding: 5px 10px; cursor: pointer; }");
             out.println("a:hover {  color:black;}");
-            out.println("button:hover{background-color: #E9EBE0;}");
+            out.println("button:hover{background-color: #E9EBE0;}");            
             out.println("</style>");
             out.println("</head>");
             out.println("<body>");
@@ -76,7 +76,7 @@ public class Sample_details extends HttpServlet {
                 out.println("<td>" + resultSet.getInt("sample_quantity") + "</td>");
                 out.println("<td>" + resultSet.getInt("price") + "</td>");
                 out.println("<td>" + resultSet.getLong("contact") + "</td>");
-                out.println("<td>" + resultSet.getInt("color") + "</td>");
+                out.println("<td style=\"text-align: center; vertical-align: middle;\"> <div style=\"height: 50px; width: 70px; background-color: " + resultSet.getString("color") + "; margin: auto;\"></div></td>");
                 out.println("<td><img src='" + request.getContextPath() + "/images/" + resultSet.getString("imgName") + "' width='100' height='100'></td>");
                 out.println("<td>" + resultSet.getDate("date") + "</td>");
                 out.println("<td>");

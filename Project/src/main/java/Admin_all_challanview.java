@@ -44,8 +44,8 @@ public class Admin_all_challanview extends HttpServlet {
             out.println("<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>");
             out.println("<style>");
             out.println("a { text-decoration: none; color: black; }");
-            out.println("body { font-family: Merienda; background-color: #E9EBE0; }");
-            out.println("h1 { text-align: center; margin-top: 20px; color: #2F3C7E; }");
+            out.println("body { font-family: Merienda;  background-image:url('https://cdn.wallpapersafari.com/93/44/dQUZ5w.jpg'); background-size: cover; background-repeat: no-repeat; background-position:right center;}");
+            out.println("h1 { text-align: center; margin-top: 20px; color: black; }");
             out.println("h2 { text-align: center; margin-top: 10px; color: #333; }");
             out.println("table { margin: auto; border-collapse: collapse; width: 80%; background-color: #fff; }");
             out.println("th, td { padding: 10px; text-align: center; border: 3px solid #ddd; }");

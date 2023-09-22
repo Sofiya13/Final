@@ -9,14 +9,17 @@
   <style>
      body {
       font-family: Merienda;
-      background:  #2F3C7E;
-      background-size: 600% 100%;
+      background-image:url('https://wallup.net/wp-content/uploads/2016/05/25/20766-texture-clothing.jpg');
+       background-size: cover; /* Set the background size to cover the full page */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
       animation: gradient 15s ease infinite;
       display: flex;
    	 align-items: center;
    	 justify-content: center;
-   	 height: 100vh;
+   	 height: 110vh;
   	  margin: 0;
+  	  padding-bottom: 100px;
+  	  opacity: 0.9;
      }
      .btn-primary{
         background-color:#2F3C7E;
@@ -31,11 +34,15 @@
       50% { background-position: 100% }
       100% { background-position: 0% }
     }
-    .card {
-      animation: cardAnimation 1s ease-in-out;
-       width: 350px;
-       box-shadow: 0 0 25px #ECF2CE;
-    }
+     .card {
+    animation: cardAnimation 1s ease-in-out;
+    width: 350px;
+    box-shadow: 0 0 10px #ECF2CE;
+    background-image: url('https://www.solidsmack.com/wp-content/uploads/2007/07/blue-shade.png'); /* Use a relative path if the image is in the same directory as your HTML file */
+    background-size: cover; /* Adjust background size if needed */
+    background-position: top;
+  }
+    
 
     @keyframes cardAnimation {
       0% { transform: scale(0); }
@@ -45,7 +52,7 @@
   <title>Client page</title>
 </head>
 <body>
-  <div class="container mt-5">
+  <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-6">
         <div class="card">

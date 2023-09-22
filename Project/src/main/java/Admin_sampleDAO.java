@@ -31,7 +31,7 @@ public class Admin_sampleDAO {
             preparedStatement.setDate(1, new java.sql.Date(user.getDate().getTime()));
             preparedStatement.setString(2, user.getImageFileName());
             preparedStatement.setString(3,user.getUsername());
-            preparedStatement.setInt(4, user.getHexValue());
+            preparedStatement.setString(4, user.getHexValue());
             preparedStatement.setInt(5, user.getPrice());
 System.out.println(user.getPrice());
            int row= preparedStatement.executeUpdate();

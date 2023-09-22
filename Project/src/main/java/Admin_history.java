@@ -35,8 +35,8 @@ public class Admin_history extends HttpServlet {
             out.println("<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>");
             out.println("<style>");
             out.println("a { text-decoration: none; color: black; }");
-            out.println("body { font-family: Merienda; background-color: #F8FAE0; }");
-            out.println("h1 { text-align: center; margin-top: 20px; color: #2F3C7E; }");
+            out.println("body { font-family: Merienda; background-image:url('http://hdwallpapers2013.com/wp-content/uploads/2013/01/Light-Blue-Windows-7-Wallpaper.jpg'); background-size: cover; background-repeat: no-repeat; background-position: bottom; height: 140vh; }");
+            out.println("h1 { text-align: center; margin-top: 20px; color: black; }");
             out.println("table { margin: auto; border-collapse: collapse; width: 80%; background-color: #fff; }");
             out.println("th, td { padding: 10px; text-align: center; border: 1px solid #ddd; }");
             out.println("th { background-color: #2F3C7E; color: white; }");

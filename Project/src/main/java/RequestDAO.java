@@ -33,7 +33,7 @@ public class RequestDAO {
             preparedStatement.setString(4, user.getContact());
             preparedStatement.setDate(5, new java.sql.Date(user.getDate().getTime()));
             preparedStatement.setString(6, user.getImageFileName());
-            preparedStatement.setInt(7, user.getHexValue());
+            preparedStatement.setString(7, user.getHexValue());
             preparedStatement.setInt(8, user.getPrice());
 System.out.println(user.getPrice());
            int row= preparedStatement.executeUpdate();
