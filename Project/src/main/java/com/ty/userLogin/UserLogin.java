@@ -1,13 +1,10 @@
-package UserLogin;
+package com.ty.userLogin;
 
 public class UserLogin {
     private String username;
     private String password;
     
 
-    // Constructor, getters, and setters
-
-    // Constructor
     public UserLogin(String username, String password ) {
         this.username = username;
         this.password = password;

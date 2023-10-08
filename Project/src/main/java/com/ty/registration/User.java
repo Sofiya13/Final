@@ -1,4 +1,4 @@
-package UserLogin;
+package com.ty.registration;
 public class User {
 	private String username;
 	private String password;
