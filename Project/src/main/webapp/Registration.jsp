@@ -215,9 +215,72 @@ span {
 	transform: rotate(-11deg) skewY(-41deg);
 	transform-origin: bottom left;
 }
+.top-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 999; /* Ensure it's above other content */
+}
+
+
+.menu-icon  {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 90px;
+    font-size: 25px;
+    margin-left: 100px;
+}
+.menu-icon:hover{
+background-color: gray;
+}
+.top-menu a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    font-size: 24px;
+}
+
+.top-menu .logo {
+    font-size: 28px;
+    font-weight: bold;
+     justify-content: center;
+}
+
+/* Adjust the body padding to make space for the fixed menu bar */
+body {
+    padding-top: 70px; /* Height of the top menu bar */
+    background-image: url('https://www.wallpaperandblindslongisland.com/wp-content/uploads/2018/05/wallpaper-with-shade.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Courier New", Courier;
+    opacity: 0.7;
+}
+.logo {
+    border: none;
+    outline: none;
+}
 </style>
 </head>
 <body>
+    <div class="top-menu">
+        <div class="menu-icon">
+            <a href="Login.jsp" class='bx bx-arrow-back'></a>
+        </div>
+       <div class="logo">
+    <img src="images/logo1.png" alt="Logo" width="200" height="80" style="border-radius: 70%;">
+</div>
+
+
+        <div class="menu-icon">
+            <a href="#" class='bx bx-home'></a>
+        </div>
+    </div>
 	<div class="wrapper">
 		<span class="bg-animate2"></span>
 		<div class="form-box register">
